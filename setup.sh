@@ -74,12 +74,10 @@ rm $ARCHIVE
 sudo chmod +x ngrok
 
 echo "Running ngrok for ARCH $(uname -m) . . ."
-#./ngrok service install --config=ngrok.yml
 systemctl enable ngrok.service
 systemctl start ngrok.service
-#./ngrok service start
 echo "Wait 10s…"
-#sleep 10
+sleep 10
 echo "Finish… to check status NGROK: http://127.0.01:4040"
 echo "To setting configuration: ngrok.yml"
 echo -e "To disable NGROK service on startup:\n systemctl disable ngrok.service"
