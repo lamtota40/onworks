@@ -79,12 +79,22 @@ systemctl enable ngrok.service
 systemctl start ngrok.service
 #./ngrok service start
 echo "Wait 10s…"
-sleep 10
+#sleep 10
 echo "Finish… to check status NGROK: http://127.0.01:4040"
 echo "To setting configuration: ngrok.yml"
 echo -e "To disable NGROK service on startup:\n systemctl disable ngrok.service"
 echo -e "To stop service NGROK:\n systemctl stop ngrok.service"
 echo -e "To change authtoken:\n /opt/ngrok/ngrok config add-authtoken 2J8ncba…"
+
+sudo apt install gparted -y
+sudo apt install grml-rescueboot -y
+cd /boot/grml
+sudo wget download.grml.org/grml64-full_2022.11.iso
+sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4.4 netscript=raw.githubusercontent.com/lamtota40/tes/main/setup-ngrok.sh startx toram\"' >> /etc/default/grml-rescueboot"
+echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+echo -ne '\n' | sudo apt update
+sudo apt install grub-customizer -y
+sudo update-grub
 
 if [ ! $(which jq) ]; then
     echo -e "service online NGROK:\n"
