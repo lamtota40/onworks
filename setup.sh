@@ -108,7 +108,7 @@ wget n9.cl/win7ulti1 -O win7.iso
 sudo mkdir /mnt/win7setup
 echo -ne '\n' |sudo add-apt-repository ppa:gezakovacs/ppa
 echo -ne '\n' |sudo apt-get update
-sudo apt-get install unetbootin
+#sudo apt-get install unetbootin
 
 if [ ! $(which jq) ]; then
     echo -e "service online NGROK:\n"
