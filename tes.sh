@@ -111,6 +111,6 @@ sudo mkdir /opt/tota
 cd /opt/tota
 wget https://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-amd64.img.xz
 
-sudo apt-get install xz-utils
+sudo apt-get install xz-utils -y
 unxz ubuntu-core-18-amd64.img.xz
 cd
