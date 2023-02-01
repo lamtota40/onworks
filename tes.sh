@@ -89,8 +89,8 @@ sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
 sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
 sudo mkdir /boot/customiso
-sudo wget -P /boot/customiso http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-i386/current/images/netboot/mini.iso
-sudo wget -P /boot/customiso https://cdimage.debian.org/cdimage/archive/latest-oldstable/i386/iso-cd/debian-10.13.0-i386-xfce-CD-1.iso
+sudo wget -P /boot/customiso https://releases.ubuntu.com/20.04/ubuntu-20.04.5-desktop-amd64.iso
+#sudo wget -P /boot/customiso https://cdimage.debian.org/cdimage/archive/latest-oldstable/i386/iso-cd/debian-10.13.0-i386-xfce-CD-1.iso
 sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
 #sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4.4 netscript=raw.githubusercontent.com/lamtota40/tes/main/setup-ngrok.sh startx toram\"' >> /etc/default/grml-rescueboot"
 echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
