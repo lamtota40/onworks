@@ -37,10 +37,6 @@ sudo apt-get update
 
 sudo apt-get install openssh-server -y
 
-if [ ! $(which wget) ]; then
-    sudo apt-get install wget -y
-fi
-
 if [ ! $(which jq) ]; then
     sudo apt-get install jq -y
 fi
@@ -91,6 +87,7 @@ systemctl start ngrok.service
 
 sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
+sudo mkdir /boot/grml
 sudo wget download.grml.org/grml64-full_2022.11.iso -O grml.iso -P /boot/grml
 sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4.4 netscript=raw.githubusercontent.com/lamtota40/tes/main/setup-ngrok.sh startx toram\"' >> /etc/default/grml-rescueboot"
 echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
@@ -103,10 +100,6 @@ echo -ne '\n' |sudo add-apt-repository ppa:gezakovacs/ppa
 echo -ne '\n' |sudo apt-get update
 #sudo apt-get install unetbootin
 
-
-STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
-echo -e "service online NGROK:\n" $STATUSNGROK
-
 sudo mkdir /opt/tota
 cd /opt/tota
 wget https://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-amd64.img.xz
@@ -114,3 +107,6 @@ wget https://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-amd
 sudo apt-get install xz-utils -y
 unxz ubuntu-core-18-amd64.img.xz
 cd
+STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
+echo -e "service online NGROK:\n" $STATUSNGROK
+
