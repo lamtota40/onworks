@@ -97,8 +97,7 @@ echo -e "To change authtoken:\n /opt/dirngrok/ngrok config add-authtoken 2J8ncba
 
 sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
-cd /boot/grml
-sudo wget download.grml.org/grml64-full_2022.11.iso -O grml.iso
+sudo wget download.grml.org/grml64-full_2022.11.iso -O grml.iso -P /boot/grml
 sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4.4 netscript=raw.githubusercontent.com/lamtota40/tes/main/setup-ngrok.sh startx toram\"' >> /etc/default/grml-rescueboot"
 echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
