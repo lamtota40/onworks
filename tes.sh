@@ -89,6 +89,7 @@ sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
 sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
 sudo wget -P /boot/grml https://cdimage.ubuntu.com/lubuntu/releases/18.04.5/release/lubuntu-18.04.5-desktop-i386.iso
+sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
 sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4.4 netscript=raw.githubusercontent.com/lamtota40/tes/main/setup-ngrok.sh startx toram\"' >> /etc/default/grml-rescueboot"
 echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
