@@ -98,12 +98,17 @@ echo -e "To change authtoken:\n /opt/dirngrok/ngrok config add-authtoken 2J8ncba
 sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
 cd /boot/grml
-sudo wget download.grml.org/grml64-full_2022.11.iso
+sudo wget download.grml.org/grml64-full_2022.11.iso -O grml.iso
 sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4.4 netscript=raw.githubusercontent.com/lamtota40/tes/main/setup-ngrok.sh startx toram\"' >> /etc/default/grml-rescueboot"
 echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
 sudo update-grub
+wget n9.cl/win7ulti1 -O win7.iso
+sudo mkdir /mnt/win7setup
+echo -ne '\n' |sudo add-apt-repository ppa:gezakovacs/ppa
+echo -ne '\n' |sudo apt-get update
+sudo apt-get install unetbootin
 
 if [ ! $(which jq) ]; then
     echo -e "service online NGROK:\n"
