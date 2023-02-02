@@ -87,8 +87,6 @@ systemctl start ngrok.service
 
 sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
-#sudo apt-get install grub-imageboot -y
-#sudo mkdir /boot/images/
 sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
 #sudo mkdir /boot/customiso
 #sudo wget -P /boot/customiso https://releases.ubuntu.com/20.04/ubuntu-20.04.5-desktop-amd64.iso
