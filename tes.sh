@@ -92,11 +92,12 @@ sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
 #sudo wget -P /boot/customiso https://releases.ubuntu.com/20.04/ubuntu-20.04.5-desktop-amd64.iso
 #sudo wget -P /boot/customiso https://cdimage.debian.org/mirror/cdimage/archive/latest-oldstable-live/i386/iso-hybrid/debian-live-10.13.0-i386-lxde.iso
 sudo wget -O win7.iso https://ss2.softlay.com/files/en_windows_7_ultimate_x86_dvd.iso
-sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
 sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4.4 netscript=raw.githubusercontent.com/lamtota40/tes/main/setup-ngrok.sh startx toram\"' >> /etc/default/grml-rescueboot"
 echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
+
+#sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
 sudo update-grub
 
 echo -ne '\n' |sudo add-apt-repository ppa:nilarimogard/webupd8
