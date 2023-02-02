@@ -102,8 +102,11 @@ sudo apt install grub-customizer -y
 sudo update-grub
 #wget n9.cl/win7ulti1 -O win7.iso
 sudo mkdir /mnt/win7setup
-echo -ne '\n' |sudo add-apt-repository ppa:gezakovacs/ppa
+echo -ne '\n' |sudo add-apt-repository ppa:nilarimogard/webupd8
 echo -ne '\n' |sudo apt-get update
+
+#echo -ne '\n' |sudo add-apt-repository ppa:gezakovacs/ppa
+#echo -ne '\n' |sudo apt-get update
 #sudo apt-get install unetbootin
 
 STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
