@@ -99,9 +99,9 @@ echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
 sudo update-grub
 
-sudo mkdir /mnt/win7setup
 echo -ne '\n' |sudo add-apt-repository ppa:nilarimogard/webupd8
 echo -ne '\n' |sudo apt-get update
+sudo apt-get install woeusb -y
 
 STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
 echo -e "service online NGROK:\n" $STATUSNGROK
