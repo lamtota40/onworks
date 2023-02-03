@@ -91,7 +91,7 @@ sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
 #sudo mkdir /boot/customiso
 #sudo wget -P /boot/customiso https://releases.ubuntu.com/20.04/ubuntu-20.04.5-desktop-amd64.iso
 #sudo wget -P /boot/customiso https://cdimage.debian.org/mirror/cdimage/archive/latest-oldstable-live/i386/iso-hybrid/debian-live-10.13.0-i386-lxde.iso
-sudo wget -O winxp.qcow2 https://p-def3.pcloud.com/D4ZE80b6KZVyhBsvZZZ3RFyo7Z2ZZ2aJZkZ1YueWZ8HZbJZZKWQTVZMzxG1RgCd98uG4wk9pRMibuRT64y/winxpprolite.img
+sudo wget -O winxp.iso https://archive.org/download/WinXPProSP3x86/en_windows_xp_professional_with_service_pack_3_x86_cd_vl_x14-73974.iso
 sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4.4 netscript=raw.githubusercontent.com/lamtota40/tes/main/setup-ngrok.sh startx toram\"' >> /etc/default/grml-rescueboot"
 echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
