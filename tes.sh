@@ -88,6 +88,7 @@ systemctl start ngrok.service
 sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
 sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
+#sudo wget -O win7.iso https://www.softlay.com/downloads/windows-7-professional?download=links&opt=1
 sudo wget -O lubuntu.iso https://cdimage.ubuntu.com/lubuntu/releases/18.04.5/release/lubuntu-18.04.5-desktop-i386.iso
 #sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4.4 netscript=raw.githubusercontent.com/lamtota40/tes/main/setup-ngrok.sh startx toram\"' >> /etc/default/grml-rescueboot"
 sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"startx toram\"' >> /etc/default/grml-rescueboot"
