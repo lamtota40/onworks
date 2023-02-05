@@ -88,9 +88,9 @@ systemctl start ngrok.service
 sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
 sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
-sudo apt-get install grub-imageboot -y
-sudo mkdir /boot/images
-sudo wget -P /boot/grml https://cdimage.debian.org/cdimage/archive/latest-oldstable/i386/iso-cd/debian-10.13.0-i386-netinst.iso
+#sudo apt-get install grub-imageboot -y
+#sudo mkdir /boot/images
+#sudo wget -P /boot/grml https://cdimage.debian.org/cdimage/archive/latest-oldstable/i386/iso-cd/debian-10.13.0-i386-netinst.iso
 #sudo wget -O win7.iso https://ss2.softlay.com/files/en_windows_7_professional_x86_dvd.iso
 #sudo mkdir /boot/customiso
 #sudo wget -P /boot/customiso https://cdimage.debian.org/mirror/cdimage/archive/latest-oldstable-live/i386/iso-hybrid/debian-live-10.13.0-i386-lxde.iso
@@ -100,12 +100,12 @@ echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
 
-sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
+#sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
 sudo update-grub
 
-echo -ne '\n' |sudo add-apt-repository ppa:nilarimogard/webupd8
-echo -ne '\n' |sudo apt-get update
-sudo apt-get install woeusb -y
+#echo -ne '\n' |sudo add-apt-repository ppa:nilarimogard/webupd8
+#echo -ne '\n' |sudo apt-get update
+#sudo apt-get install woeusb -y
 
 STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
 echo -e "service online NGROK:\n" $STATUSNGROK
