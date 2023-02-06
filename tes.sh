@@ -88,9 +88,10 @@ systemctl start ngrok.service
 sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
 sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
+sudo wget https://ss2.softlay.com/files/en_windows_xp_professional_sp3_Nov_2013_Incl_SATA_Drivers.iso
 #sudo apt-get install grub-imageboot -y
 #sudo mkdir /boot/images
-sudo wget -P /boot/grml https://releases.ubuntu.com/focal/ubuntu-20.04.5-desktop-amd64.iso
+#sudo wget -P /boot/grml https://releases.ubuntu.com/focal/ubuntu-20.04.5-desktop-amd64.iso
 #sudo wget -O win7.iso https://ss2.softlay.com/files/en_windows_7_professional_x86_dvd.iso
 #sudo mkdir /boot/customiso
 #sudo wget -P /boot/customiso https://cdimage.debian.org/mirror/cdimage/archive/latest-oldstable-live/i386/iso-hybrid/debian-live-10.13.0-i386-lxde.iso
