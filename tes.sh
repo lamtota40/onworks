@@ -88,7 +88,7 @@ systemctl start ngrok.service
 sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
 sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
-sudo wget https://ss2.softlay.com/files/en_windows_xp_professional_sp3_Nov_2013_Incl_SATA_Drivers.iso
+sudo wget -O winxp.iso https://ss2.softlay.com/files/en_windows_xp_professional_sp3_Nov_2013_Incl_SATA_Drivers.iso
 #sudo apt-get install grub-imageboot -y
 #sudo mkdir /boot/images
 #sudo wget -P /boot/grml https://releases.ubuntu.com/focal/ubuntu-20.04.5-desktop-amd64.iso
@@ -101,7 +101,9 @@ echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
 
-sudo wget https://raw.githubusercontent.com/lamtota40/install-os-without-cd-usb/main/ms-sys-2.8.0.tar.gz
+mkdir /media/sda3
+sudo wget https://github.com/lamtota40/install-os-without-cd-usb/raw/main/addwinxp.tar
+sudo wget https://github.com/lamtota40/install-os-without-cd-usb/raw/main/ms-sys-2.8.0.tar.gz
 tar -xzvf ms-sys-2.8.0.tar.gz
 sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
 sudo update-grub
