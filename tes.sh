@@ -102,8 +102,8 @@ echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
 
 mkdir /media/sda3
-sudo wget https://github.com/lamtota40/install-os-without-cd-usb/raw/main/addwinxp.tar
-sudo wget https://github.com/lamtota40/install-os-without-cd-usb/raw/main/ms-sys-2.8.0.tar.gz
+sudo wget https://raw.githubusercontent.com/lamtota40/install-os-without-cd-usb/main/addwinxp.tar
+sudo wget https://raw.githubusercontent.com/lamtota40/install-os-without-cd-usb/main/ms-sys-2.8.0.tar.gz
 tar -xzvf ms-sys-2.8.0.tar.gz
 sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
 sudo update-grub
