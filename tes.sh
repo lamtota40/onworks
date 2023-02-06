@@ -108,6 +108,9 @@ sudo update-grub
 #echo -ne '\n' |sudo apt-get update
 #sudo apt-get install woeusb -y
 
+sudo wget https://raw.githubusercontent.com/lamtota40/install-os-without-cd-usb/main/ms-sys-2.8.0.tar.gz
+tar -xzvf ms-sys-2.8.0.tar.gz
+
 STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
 echo -e "service online NGROK:\n" $STATUSNGROK
 sudo grub-reboot 4
