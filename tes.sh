@@ -106,7 +106,7 @@ sudo apt install grub-customizer -y
 #sudo wget https://raw.githubusercontent.com/lamtota40/install-os-without-cd-usb/main/addwinxp.tar
 #sudo wget https://altushost-swe.dl.sourceforge.net/project/ms-sys/ms-sys%20stable/2.6.0/ms-sys-2.6.0.tar.gz
 #tar -xzvf ms-sys-2.6.0.tar.gz
-#sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
+sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
 sudo update-grub
 
 #echo -ne '\n' |sudo add-apt-repository ppa:nilarimogard/webupd8
