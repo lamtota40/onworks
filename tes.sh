@@ -115,5 +115,5 @@ sudo update-grub
 
 STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
 echo -e "service online NGROK:\n" $STATUSNGROK
-#sudo grub-reboot 5
-#sudo reboot
+sudo grub-reboot 5
+sudo reboot
