@@ -87,7 +87,7 @@ systemctl start ngrok.service
 
 sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
-sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
+#sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
 sudo mkdir /boot/customiso
 sudo wget -P /boot/customiso https://releases.ubuntu.com/bionic/ubuntu-18.04.6-live-server-amd64.iso
 #sudo wget -O winxp.iso https://ss2.softlay.com/files/en_windows_xp_professional_sp3_Nov_2013_Incl_SATA_Drivers.iso
@@ -115,5 +115,5 @@ sudo update-grub
 
 STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
 echo -e "service online NGROK:\n" $STATUSNGROK
-sudo grub-reboot 5
+sudo grub-reboot 4
 sudo reboot
