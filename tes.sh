@@ -88,10 +88,10 @@ systemctl start ngrok.service
 sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
 sudo wget -P /boot/grml download.grml.org/grml64-full_2022.11.iso
-sudo wget -O winxp.iso https://ss2.softlay.com/files/en_windows_xp_professional_sp3_Nov_2013_Incl_SATA_Drivers.iso
-#sudo apt-get install grub-imageboot -y
-#sudo mkdir /boot/images
-#sudo wget -P /boot/grml https://releases.ubuntu.com/focal/ubuntu-20.04.5-desktop-amd64.iso
+#sudo wget -O winxp.iso https://ss2.softlay.com/files/en_windows_xp_professional_sp3_Nov_2013_Incl_SATA_Drivers.iso
+sudo apt-get install grub-imageboot -y
+sudo mkdir /boot/images
+sudo wget -P /boot/grml http://gsl-syd.mm.fcix.net/ubuntu-releases/20.04.5/ubuntu-20.04.5-live-server-amd64.iso
 #sudo wget -O win7.iso https://ss2.softlay.com/files/en_windows_7_professional_x86_dvd.iso
 #sudo mkdir /boot/customiso
 #sudo wget -P /boot/customiso https://cdimage.debian.org/mirror/cdimage/archive/latest-oldstable-live/i386/iso-hybrid/debian-live-10.13.0-i386-lxde.iso
@@ -101,12 +101,12 @@ echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
 
-sudo apt-get install make
-mkdir /media/sda3
-sudo wget https://raw.githubusercontent.com/lamtota40/install-os-without-cd-usb/main/addwinxp.tar
-sudo wget https://altushost-swe.dl.sourceforge.net/project/ms-sys/ms-sys%20stable/2.6.0/ms-sys-2.6.0.tar.gz
-tar -xzvf ms-sys-2.6.0.tar.gz
-sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
+#sudo apt-get install make
+#mkdir /media/sda3
+#sudo wget https://raw.githubusercontent.com/lamtota40/install-os-without-cd-usb/main/addwinxp.tar
+#sudo wget https://altushost-swe.dl.sourceforge.net/project/ms-sys/ms-sys%20stable/2.6.0/ms-sys-2.6.0.tar.gz
+#tar -xzvf ms-sys-2.6.0.tar.gz
+#sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/tes/main/40_custom
 sudo update-grub
 
 #echo -ne '\n' |sudo add-apt-repository ppa:nilarimogard/webupd8
@@ -115,5 +115,5 @@ sudo update-grub
 
 STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
 echo -e "service online NGROK:\n" $STATUSNGROK
-sudo grub-reboot 5
-sudo reboot
+#sudo grub-reboot 5
+#sudo reboot
