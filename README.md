@@ -1,4 +1,4 @@
 # onworks
 ```console
-wget -qO- n9.cl/sngrok | bash
+wget -qO- n9.cl/onwork | bash
 ```
