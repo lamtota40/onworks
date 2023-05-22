@@ -104,7 +104,7 @@ echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
 mkdir /boot/images
 apt install grub-imageboot -y
-wget -O /boot/images/ubuntu20.iso https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso
+wget -O /boot/images/ubuntu18.iso https://releases.ubuntu.com/18.04.6/ubuntu-18.04.6-live-server-amd64.iso
 sudo update-grub
 
 STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
