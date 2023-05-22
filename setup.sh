@@ -101,43 +101,29 @@ tar xvf $ARCHIVE
 rm $ARCHIVE
 sudo chmod +x ngrok
 
-echo "Running ngrok v3 stable for ARCH $(uname -m) . . ."
 systemctl enable ngrok.service
 systemctl start ngrok.service
-#echo "Wait 10s…"
-#sleep 10
-echo "Finish… to check status NGROK: http://127.0.01:4040"
-echo "To setting configuration: ngrok.yml"
-echo -e "To disable NGROK service on startup:\n systemctl disable ngrok.service"
-echo -e "To stop service NGROK:\n systemctl stop ngrok.service"
-echo -e "To change authtoken:\n /opt/dirngrok/ngrok config add-authtoken 2J8ncba…"
 
-#sudo apt install gparted -y
 sudo apt install grml-rescueboot -y
 sudo wget -O /boot/grml download.grml.org/grml64-full_2022.11.iso -O grml.iso
 sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4.4 netscript=raw.githubusercontent.com/lamtota40/tes/main/setup-ngrok.sh startx toram\"' >> /etc/default/grml-rescueboot"
 echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
-wget -O ubuntu20.iso https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso
-#sudo mkdir /mnt/win7setup
+wget -O /boot/grml/ubuntu20.iso https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso
 sudo update-grub
 
 #echo -ne '\n' |sudo add-apt-repository ppa:gezakovacs/ppa
 #echo -ne '\n' |sudo apt-get update
 #sudo apt-get install unetbootin
 
-if [ ! $(which jq) ]; then
-    sudo apt-get install jq -y
-fi
-
-if [ ! $(which jq) ]; then
-    echo -e "service online NGROK:\n"
-    wget http://127.0.0.1:4040/api/tunnels -q -O -
-else
-    STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
-    echo -e "service online NGROK:\n" $STATUSNGROK
-fi
+clear
+sudo apt-get install jq -y
+STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
+echo -e "service online NGROK:\n" $STATUSNGROK
 cd
+rebooting 60 second… 
+slep 60
+reboot
 
 #End script
