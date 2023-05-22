@@ -102,9 +102,9 @@ sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4
 echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
+mkdir /boot/images
 apt install grub-imageboot -y
-sudo mkdir /boot/image
-wget -O /boot/image/ubuntu20.iso https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso
+wget -O /boot/images/ubuntu20.iso https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso
 sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/install-os-without-cd-usb/main/40_custom
 sudo update-grub
 
