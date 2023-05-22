@@ -105,7 +105,6 @@ sudo apt install grub-customizer -y
 mkdir /boot/images
 apt install grub-imageboot -y
 wget -O /boot/images/ubuntu20.iso https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso
-sudo wget -N -P /etc/grub.d/ https://raw.githubusercontent.com/lamtota40/install-os-without-cd-usb/main/40_custom
 sudo update-grub
 
 STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
