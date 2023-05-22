@@ -119,11 +119,12 @@ sudo bash -c "echo 'CUSTOM_BOOTOPTIONS=\"ssh=pas123 vnc=pas123 dns=8.8.8.8,8.8.4
 echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
-sudo update-grub
-wget -O ubuntu20.iso https://releases.ubuntu.com/focal/ubuntu-20.04.5-live-server-amd64.iso
+wget -O ubuntu20.iso https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso
 #sudo mkdir /mnt/win7setup
-echo -ne '\n' |sudo add-apt-repository ppa:gezakovacs/ppa
-echo -ne '\n' |sudo apt-get update
+sudo update-grub
+
+#echo -ne '\n' |sudo add-apt-repository ppa:gezakovacs/ppa
+#echo -ne '\n' |sudo apt-get update
 #sudo apt-get install unetbootin
 
 if [ ! $(which jq) ]; then
