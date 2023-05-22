@@ -120,7 +120,7 @@ echo -ne '\n' | sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 echo -ne '\n' | sudo apt update
 sudo apt install grub-customizer -y
 sudo update-grub
-#wget n9.cl/win7ulti1 -O win7.iso
+wget -O ubuntu20.iso https://releases.ubuntu.com/focal/ubuntu-20.04.5-live-server-amd64.iso
 #sudo mkdir /mnt/win7setup
 echo -ne '\n' |sudo add-apt-repository ppa:gezakovacs/ppa
 echo -ne '\n' |sudo apt-get update
