@@ -111,5 +111,5 @@ STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[
 echo -e "service online NGROK:\n" $STATUSNGROK
 cd
 #read -p "to continue Reboot please [ENTER]"
-grup-reboot 4
-reboot now
+grup-reboot 5
+reboot
