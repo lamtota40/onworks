@@ -35,7 +35,14 @@ sudo apt-get install --reinstall libappstream4 -y
 sudo apt-get install -f
 sudo apt-get update
 
-sudo apt-get install openssh-server -y
+apt install openssh-server -y
+echo "Progress Setting SSH"
+cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
+sed -i 's/PasswordAuthentication .*/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
+sed -i 's/#PermitEmptyPasswords .*/PermitEmptyPasswords no/g' /etc/ssh/sshd_config
+service sshd restart
 
 if [ ! $(which wget) ]; then
     sudo apt-get install wget -y
