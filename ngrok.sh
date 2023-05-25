@@ -20,7 +20,7 @@ DOWNLOAD_URL=https://bin.equinox.io/c/bNyj1mQVY4c/$ARCHIVE
 
 #sudo apt update 
 sudo apt install curl wget unzip jq -y
-wget -c --retry-connrefused --tries=20 --waitretry=1 --timeout=5 https://raw.githubusercontent.com/lamtota40/tes/main/ngrok.yml
+wget -c --retry-connrefused --tries=20 --waitretry=1 --timeout=5 https://raw.githubusercontent.com/lamtota40/onworks/main/ngrok.yml
 wget -c --retry-connrefused --tries=20 --waitretry=1 --timeout=5 $DOWNLOAD_URL
 unzip $ARCHIVE
 chmod +x ngrok
