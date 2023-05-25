@@ -78,7 +78,7 @@ cd /opt/dirngrok
 if [ -f "/opt/dirngrok/ngrok.yml" ];then
     echo "OK…file 'ngrok.yml' Found"
 else
-    wget https://raw.githubusercontent.com/lamtota40/ngrok-easy-install/main/ngrok.yml --no-check-certificate
+    wget https://raw.githubusercontent.com/lamtota40/onworks/main/ngrok.yml --no-check-certificate
 fi
 
 if [ -f "/opt/dirngrok/ngrok.service" ];then
