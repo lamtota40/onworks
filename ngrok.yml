@@ -1,0 +1,9 @@
+version: "2"
+authtoken: 2Q8CdwuBZiwu9WmL20mwUJrrZsu_7Fk7MP9EH1fHxGUuJ3N98
+tunnels:
+  SSH:
+    addr: 22
+    proto: tcp
+  VNC:
+    addr: 5900
+    proto: tcp
