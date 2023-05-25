@@ -50,8 +50,8 @@ apt install openssh-server -y
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 sed -i 's/PasswordAuthentication .*/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
-sed -i 's/#PermitEmptyPasswords .*/PermitEmptyPasswords no/g' /etc/ssh/sshd_config
+#sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
+#sed -i 's/#PermitEmptyPasswords .*/PermitEmptyPasswords no/g' /etc/ssh/sshd_config
 service sshd restart
 
 #for download manual https://dl.equinox.io/ngrok/ngrok-v3/stable/archive
@@ -110,6 +110,5 @@ sudo update-grub
 STATUSNGROK=$(wget http://127.0.0.1:4040/api/tunnels -q -O - | jq '.tunnels | .[] | "\(.name) \(.public_url)"')
 echo -e "service online NGROK:\n" $STATUSNGROK
 cd
-#read -p "to continue Reboot please [ENTER]"
 grup-reboot 4
 reboot now
