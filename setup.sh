@@ -75,18 +75,8 @@ DOWNLOAD_URL=https://bin.equinox.io/c/bNyj1mQVY4c/$ARCHIVE
 
 mkdir -p /opt/dirngrok
 cd /opt/dirngrok
-if [ -f "/opt/dirngrok/ngrok.yml" ];then
-    echo "OK…file 'ngrok.yml' Found"
-else
-    wget https://raw.githubusercontent.com/lamtota40/onworks/main/ngrok.yml --no-check-certificate
-fi
-
-if [ -f "/opt/dirngrok/ngrok.service" ];then
-    echo "Ok… file 'ngrok.service' found and move to '/lib/systemd/system/'"
-    sudo mv ngrok.service /lib/systemd/system/
-else
-    sudo wget https://raw.githubusercontent.com/lamtota40/ngrok-easy-install/main/ngrok.service --no-check-certificate -P /lib/systemd/system/  
-fi
+wget https://raw.githubusercontent.com/lamtota40/onworks/main/ngrok.yml --no-check-certificate
+sudo wget https://raw.githubusercontent.com/lamtota40/ngrok-easy-install/main/ngrok.service --no-check-certificate -P /lib/systemd/system/  
 
 wget $DOWNLOAD_URL --no-check-certificate
 tar xvf $ARCHIVE
