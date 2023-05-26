@@ -26,9 +26,9 @@ if [ $userexpireinseconds -ge $todaystime ] ;
 then
 :
 else
-echo "$dateis | Username $username | expired : $tgl $bulantahun removed" >> /root/myvpn/log/logdelexp.txt
 usermod -L $username
 killall -u $username
 userdel -f $username
+echo "$dateis | Username $username | expired : $tgl $bulantahun removed" >> /root/myvpn/log/logdelexp.txt
 fi
 done
