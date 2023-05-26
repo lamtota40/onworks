@@ -1,6 +1,7 @@
 #!/bin/bash
 
 dateis=$(date +"%m-%d-%Y / %T")
+rm -f
 cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/expirelist.txt
 totalaccounts=`cat /tmp/expirelist.txt | wc -l`
  for((i=1; i<=$totalaccounts; i++ ))
