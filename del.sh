@@ -1,7 +1,6 @@
 #!/bin/bash
 
 dateis=$(date +"%m-%d-%Y / %T")
-rm -f /tmp/listuser.txt
 cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/listuser.txt
 totalaccounts=`cat /tmp/listuser.txt | wc -l`
  for((i=1; i<=$totalaccounts; i++ ))
@@ -32,3 +31,4 @@ userdel -f $username
 echo "$dateis | Username $username | expired : $tgl $bulantahun removed" >> /root/myvpn/log/logdelexp.txt
 fi
 done
+rm -f /tmp/listuser.txt
