@@ -19,7 +19,7 @@ totalaccounts=`cat /tmp/expirelist.txt | wc -l`
        username=$username" " 
     done
 bulantahun=`echo $tglexp |awk -F" " '{print $2,$6}'`
-echo "echo "Expired- User : $username Expire at : $tgl $bulantahun"" >> /usr/local/bin/alluser
+echo "echo "Expired- User : $username Expire at : $tgl $bulantahun"" >> /root/myvpn/log/alluser.txt
 todaystime=`date +%s`
 if [ $userexpireinseconds -ge $todaystime ] ;
 then
