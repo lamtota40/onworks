@@ -1,12 +1,12 @@
 #!/bin/bash
 
 dateis=$(date +"%m-%d-%Y / %T")
-rm -f
-cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/expirelist.txt
-totalaccounts=`cat /tmp/expirelist.txt | wc -l`
+rm -f /tmp/listuser.txt
+cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/listuser.txt
+totalaccounts=`cat /tmp/listuser.txt | wc -l`
  for((i=1; i<=$totalaccounts; i++ ))
     do
-    tuserval=`head -n $i /tmp/expirelist.txt | tail -n 1`
+    tuserval=`head -n $i /tmp/listuser.txt | tail -n 1`
     username=`echo $tuserval | cut -f1 -d:`
     userexp=`echo $tuserval | cut -f2 -d:`
     userexpireinseconds=$(( $userexp * 86400 ))
