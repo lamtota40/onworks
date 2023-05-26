@@ -1,6 +1,6 @@
 #!/bin/bash
 
-s_date=$(date +"%m-%d-%Y")
+s_date=$(date +"%m-%d-%Y / %T")
 s_time=$(date +"%T")
 hariini=`date +%d-%m-%Y`
 cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/expirelist.txt
