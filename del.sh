@@ -25,7 +25,7 @@
                then
 		    	:
                else
-               echo "echo "Expired- Username : $username are expired at: $tgl $bulantahun and removed : $hariini "" >> /usr/local/bin/deleteduser
+               echo "echo "Expired- Username : $username are expired at: $tgl $bulantahun and removed : $hariini "" > /root/myvpn/log/logdelexp.txt
 	           echo "Username $username that are expired at $tgl $bulantahun removed from the VPS $hariini"
                userdel $username
                fi
