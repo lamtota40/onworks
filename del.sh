@@ -1,4 +1,7 @@
 #!/bin/bash
+
+s_date=$(date +"%m-%d-%Y")
+s_time=$(date +"%T")
 hariini=`date +%d-%m-%Y`
 cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/expirelist.txt
 totalaccounts=`cat /tmp/expirelist.txt | wc -l`
@@ -25,6 +28,8 @@ then
 :
 else
 echo "$hariini Username $username | expired : $tgl $bulantahun removed" >> /root/myvpn/log/logdelexp.txt
-userdel $username
+usermod -L $username
+killall -u $username
+userdel -f -r $username
 fi
 done
