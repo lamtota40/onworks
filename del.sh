@@ -19,7 +19,7 @@ totalaccounts=`cat /tmp/listuser.txt | wc -l`
        do
        username=$username" " 
     done
-bulantahun=`echo $tglexp |awk -F" " '{print $2,$6}'`
+bulantahun=`echo $tglexp |awk -F" " '{print $2,$3,$4}'`
 todaystime=`date +%s`
 if [ $userexpireinseconds -ge $todaystime ] ;
 then
