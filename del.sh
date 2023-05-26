@@ -1,17 +1,6 @@
 #!/bin/bash
 # HT Cloud
-# ==========================================
-# Color
-RED='\033[0;31m'
-NC='\033[0m'
-GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-LIGHT='\033[0;37m'
-# ==========================================
-# Getting
+
 MYIP=$(wget -qO- ipinfo.io/ip);
                hariini=`date +%d-%m-%Y`
                echo "Thank you for removing the EXPIRED USERS"
@@ -46,6 +35,3 @@ MYIP=$(wget -qO- ipinfo.io/ip);
                userdel $username
                fi
                done
-               echo " "
-               echo "--------------------------------------"
-               echo "Script are successfully run"
