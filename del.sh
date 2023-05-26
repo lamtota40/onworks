@@ -1,7 +1,4 @@
 #!/bin/bash
-# HT Cloud
-
-MYIP=$(wget -qO- ipinfo.io/ip);
                hariini=`date +%d-%m-%Y`
                echo "Thank you for removing the EXPIRED USERS"
                echo "--------------------------------------"
