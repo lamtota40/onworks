@@ -29,6 +29,6 @@ else
 echo "$dateis | Username $username | expired : $tgl $bulantahun removed" >> /root/myvpn/log/logdelexp.txt
 usermod -L $username
 killall -u $username
-userdel -f -r $username
+userdel -f $username
 fi
 done
